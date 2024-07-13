@@ -41,6 +41,9 @@ ssh-keygen -t rsa
 
 ![upload key to github action](https://github.com/user-attachments/assets/9bd965eb-65dc-43cd-b473-5199b189c5f9)
 
+
+* Clone project
+   
 * Project Scaffolding ( files):
 
 | Plugin | README |
@@ -177,9 +180,4 @@ Remaining screenshots can be checked in the screenshot folder.
 ## YouTube Demo
 ## Todo
 Link to YouTube Demo Video -> ()
-
-## License
-
-MIT
-
-**Free Software, Hell Yeah!**
+ 
