@@ -13,7 +13,7 @@ class WebsiteTestUser(HttpUser):
 
     @task(1)
     def index(self):
-        self.client.get("https://flask-app-anhdv29.azurewebsites.net/")
+        self.client.get("https://flask-anhdv29-123-e5f8a8gxdfe4bmdz.southeastasia-01.azurewebsites.net")
 
     @task(2)
     def predict(self):
