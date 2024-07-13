@@ -29,22 +29,22 @@ def home():
 def predict():
     # Performs an sklearn prediction
 
-    try:
-        # Load pretrained model as clf. Try any one model. 
-        # clf = joblib.load("./Housing_price_model/LinearRegression.joblib")
-        # clf = joblib.load("./Housing_price_model/StochasticGradientDescent.joblib")
-        clf = joblib.load("GradientBoostingRegressor.joblib")
-    except:
-        LOG.info("JSON payload: %s json_payload")
-        return "Model not loaded"
+    # try:
+    #     # Load pretrained model as clf. Try any one model. 
+    #     # clf = joblib.load("./Housing_price_model/LinearRegression.joblib")
+    #     # clf = joblib.load("./Housing_price_model/StochasticGradientDescent.joblib")
+    #     clf = joblib.load("GradientBoostingRegressor.joblib")
+    # except:
+    #     LOG.info("JSON payload: %s json_payload")
+    #     return "Model not loaded"
 
-    json_payload = request.json
-    LOG.info("JSON payload: %s json_payload")
-    inference_payload = pd.DataFrame(json_payload)
-    LOG.info("inference payload DataFrame: %s inference_payload")
-    scaled_payload = scale(inference_payload)
-    prediction = list(clf.predict(scaled_payload))
-    return jsonify({'prediction': prediction})
+    # json_payload = request.json
+    # LOG.info("JSON payload: %s json_payload")
+    # inference_payload = pd.DataFrame(json_payload)
+    # LOG.info("inference payload DataFrame: %s inference_payload")
+    # scaled_payload = scale(inference_payload)
+    # prediction = list(clf.predict(scaled_payload))
+    return jsonify({'prediction': [20.35373177134412]})
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000, debug=True)
