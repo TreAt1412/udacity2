@@ -24,7 +24,6 @@ variables:
 
   # Python version: 3.7
   pythonVersion: '3.7'
-
 stages:
 - stage: Build
   displayName: Build stage
@@ -37,7 +36,7 @@ stages:
       inputs:
         versionSpec: '$(pythonVersion)'
       displayName: 'Use Python $(pythonVersion)'
-
+    
     - script: |
         python -m venv antenv
         source antenv/bin/activate
@@ -46,13 +45,16 @@ stages:
         pip install -r requirements.txt
       workingDirectory: $(projectRoot)
       displayName: "Install requirements"
+    
     - script: |
         python -m venv antenv
         source antenv/bin/activate
         make install
         make lint
+        make all
       workingDirectory: $(projectRoot)
       displayName: "Run Lint test"
+      
     - task: ArchiveFiles@2
       displayName: 'Archive files'
       inputs:
@@ -79,14 +81,14 @@ stages:
       runOnce:
         deploy:
           steps:
-
+          
           - task: UsePythonVersion@0
             inputs:
               versionSpec: '$(pythonVersion)'
             displayName: 'Use Python version'
 
           - task: AzureWebApp@1
-            displayName: 'Deploy Azure Web App flask-anhdv29-123'
+            displayName: 'Deploy Azure Web App : flask-anhdv-123'
             inputs:
               azureSubscription: $(azureServiceConnectionId)
               appName: $(webAppName)
