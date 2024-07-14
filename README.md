@@ -20,6 +20,12 @@ In this project, you will build a Github repository from scratch and create a sc
 ## First: CI Pipeline with GitHub Actions
  
 
+### Architectural Diagram - CI - GitHub Actions
+
+* Architectural Diagram 
+
+ ![alt text](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/blob/main/images/ci-diagram.png)
+  
 ### Instructions
 
 * Enter to Azure Portal with your Account and open a Azure Cloud shell ( use Bash)
@@ -155,6 +161,13 @@ locust -f locustfile.py --host https://flask-anhdv29-123.azurewebsites.net/ --us
 ![locust report](https://github.com/user-attachments/assets/72ded0e7-77c4-425d-b511-7dbffb46d7b6)
 
 Remaining screenshots can be checked in the screenshot folder.
+
+## Future Enhancements
+
+* Adding more test cases.
+* Creating a UI for making predictions.
+* Using Github Actions instead of Azure pipelines.
+* Run the app on Kubernetes cluster
 
 
 ## YouTube Demo
