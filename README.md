@@ -1,6 +1,6 @@
 # Building a CI/CD Pipeline to Azure App Service
 
- 
+ [![Python application test with Github Actions](https://github.com/TreAt1412/udacity2/actions/workflows/python-app.yml/badge.svg)](https://github.com/TreAt1412/udacity2/actions/workflows/python-app.yml)
 
 ## Introduction
 
