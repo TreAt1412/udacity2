@@ -8,7 +8,7 @@ LOG.setLevel(logging.INFO)
 
 @app.route("/")
 def home():
-    html = "<h3>Sklearn Prediction Home - Udacity Project-2</h3>"
+    html = "<h3>Sklearn Prediction Home - Udacity Project-2 - Azure Pipeline</h3>"
     return html.format(format)
 
 # TO DO:  Log out the prediction value
