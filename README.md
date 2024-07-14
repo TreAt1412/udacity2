@@ -28,7 +28,7 @@ In this project, you will build a Github repository from scratch and create a sc
 * First of all set up SSH Keys in your azure cloud shell, add the `id_rsa.pub` key to your GitHub repo ( ssh keys)  and then clone the project there.
 
 ```sh
-ssh-keygen -t rsa
+ssh-keygen -t rsa -b 2048 -C "dovietanh74@gmail.com"
  cat ~/.ssh/id_rsa.pub
 ```
 ![gen key with azure cloud shell](https://github.com/user-attachments/assets/96649109-b725-4f6c-9d8e-d4a40c5f33d6)
