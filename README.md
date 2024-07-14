@@ -172,5 +172,5 @@ Remaining screenshots can be checked in the screenshot folder.
 
 ## YouTube Demo
 ## Todo
-Link to YouTube Demo Video -> (https://www.youtube.com/watch?v=qLqSj2UjvGQ)
+Link to YouTube Demo Video -> (https://youtu.be/cEf5XwK920o)
  
