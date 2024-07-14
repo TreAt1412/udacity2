@@ -18,21 +18,17 @@ In this project, you will build a Github repository from scratch and create a sc
 * An Azure DevOps Account (https://dev.azure.com/)
 
 ## First: CI Pipeline with GitHub Actions
-
-### Architectural Diagram - CI - GitHub Actions
-
-* Architectural Diagram - ![alt text](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/blob/main/images/ci-diagram.png)
+ 
 
 ### Instructions
 
-* Enter to Azure Portal with your Accoutn and open a Azure Cloud shell ( use Bash)
-
-> If you are not created one , just follow the first creation and wait a seconds to get your Cloud Shell.
+* Enter to Azure Portal with your Account and open a Azure Cloud shell ( use Bash)
+ 
 
 * First of all set up SSH Keys in your azure cloud shell, add the `id_rsa.pub` key to your GitHub repo ( ssh keys)  and then clone the project there.
 
 ```sh
-ssh-keygen -t rsa
+ssh-keygen -t rsa -b 2048 -C "dovietanh74@gmail.com"
  cat ~/.ssh/id_rsa.pub
 ```
 ![gen key with azure cloud shell](https://github.com/user-attachments/assets/96649109-b725-4f6c-9d8e-d4a40c5f33d6)
@@ -81,32 +77,21 @@ Go to GItHUb Actions and you will see the Workflow in action!!!
 
 ## Second : CI/CD Pipeline with AZURE DEVOPS
 
-* Return to the `main` branch
-
-```sh
-git checkout main
-git branch
-```
-
-### Azure DevOps Pipelines Architectural Diagram
-
-* Architectural Diagram -
-![alt text](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/blob/main/images/cd-diagram.png)
+  
 
 * Go to Azure Devops page  and sign in it, create a new Project inside your organization ( if you don't have an organization create one first).
 
 * In your new Project in Azure DevOps, go to Project Settings and create a new `Pipeline --> Service Connection` as is explained on the YouTube video link  below ( Service Connection must be of Type Azure Resource Manager)
 
-> Note 1 : Name your Service Connection `AZServiceConnection`
-> Note 2: Use a link of as this `https://dev.azure.com/<organization>/<project_name>/_apis/serviceendpoint/endpoints?api-version=5.0-preview.2`  to find your ServiceConnectionID ( take note of this number since you will needed in the yaml file to build the pipeline). Replace the values for the ones that you created for your organization and project name.
-> Note3: the ServiceConnection ID is the number before the name `AZServiceConnection` of the above link.
+>  Name your Service Connection `AZServiceConnection`
+>   Use a link of as this `https://dev.azure.com/<organization>/<project_name>/_apis/serviceendpoint/endpoints?api-version=5.0-preview.2`  to find your ServiceConnectionID   
 
 ![get service connection id](https://github.com/user-attachments/assets/f6a8c5a7-0fde-4306-9277-3b37840cbbeb)
 
-* Create the webapp deploying the code from the local workspace to Azure app Service ( using Plan B1)  with this command:
+* Create the webapp deploying the code from the local workspace to Azure app Service ( using Free Plan)  with this command:
 
 ```sh
-az webapp up -n <name of webapp> --location eastus --sku F1
+az webapp up -n <name of webapp> --location eastus --sku F1 -g <azurerg>
 ```
 
 ![create web app success](https://github.com/user-attachments/assets/25a16459-ec3a-4e3d-b2d0-69b0adfcae36)
@@ -120,8 +105,7 @@ update **webAppName** with web app name created before
 ![pipeline](https://github.com/user-attachments/assets/cb099db6-3eba-4645-a57e-bd4a031c56a3)
 
 ![pipeline ](https://github.com/user-attachments/assets/0cdca192-01ad-43f0-8cf2-470dee691d8e)
-
-> Choose the `main` branch and the file named `azure-pipelines.yml`  
+ 
  
 
 save and see result of pipeline deployment
@@ -137,12 +121,8 @@ https://flask-anhdv29-123.azurewebsites.net/
  ![web deploy success](https://github.com/user-attachments/assets/8b962bfa-c2ad-4557-8eb5-e214db554935)
 
 * Update the file `make_predict_azure_app.sh` with the webapp service end point
-
-```sh
-grep https make_predict_azure_app.sh
-```
-
-* When the Azure DevOPs pipeline is successfully deployed, then its time to make a prediction on our webapp ( running in Azure App Service):
+ 
+* run below command to test our application
 
 ```sh
 ./make_predict_azure_app.sh
