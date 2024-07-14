@@ -168,6 +168,7 @@ Remaining screenshots can be checked in the screenshot folder.
 * Creating a UI for making predictions.
 * Using Github Actions instead of Azure pipelines.
 * Run the app on Kubernetes cluster
+* Build alert when deploy success or not
 
 
 ## YouTube Demo
