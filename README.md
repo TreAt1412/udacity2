@@ -91,7 +91,7 @@ Go to GItHUb Actions and you will see the Workflow in action!!!
 * Create the webapp deploying the code from the local workspace to Azure app Service ( using Free Plan)  with this command:
 
 ```sh
-az webapp up -n <name of webapp> --location eastus --sku F1
+az webapp up -n <name of webapp> --location eastus --sku F1 -g <azurerg>
 ```
 
 ![create web app success](https://github.com/user-attachments/assets/25a16459-ec3a-4e3d-b2d0-69b0adfcae36)
